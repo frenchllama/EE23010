@@ -112,110 +112,157 @@
 \renewcommand{\thetable}{\theenumi}
 
 \begin{flushleft}
-	Required to find points of contact, $E_{3}$ and $F_{3}$, of incircle with sides AC and AB respectively.
+	Required to find points of contact, $E_{3}$ and $F_{3}$, of incircle with sides AC and AB respectively.\\
+
+	\bigskip
+
+	From previous questions we know the coordinates of the incircle are : 
+	\begin{align}
+		I = 
+		\begin {bmatrix}
+			\frac{-53-11\sqrt{37}+7\sqrt{61}+\sqrt{2257}}{12} \\ \\
+			\frac{5-\sqrt{37}+5\sqrt{61}-\sqrt{2257}}{12}
+		\end{bmatrix}
+	\end{align}\\
+
+	Radius of incircle is :
+    \begin{align}
+		r = \frac{185+41\sqrt{37}-37\sqrt{61}-\sqrt{2257}}{6\sqrt{74}}
+    \end{align}\\
+
+	Equation of incircle is : 
+	\begin{align}
+		{\lvert \lvert x-I \rvert \rvert}^2 = {r}^2 
+	\end{align}\\
+
+	points A, B and C are : 
+	\begin{align}
+		A = \begin{bmatrix}
+			1\\
+			-1
+		\end{bmatrix}, 
+		B = \begin{bmatrix}
+			-4\\
+			6
+		\end{bmatrix}, 
+		C = \begin{bmatrix}
+			-3\\
+			-5
+		\end{bmatrix}
+	\end{align}\\
+
+	Parametric equation of AC is :
+	\begin{align}
+		x = A + k(A-B)
+	\end{align}\\
+	\begin{align}
+		x = \begin{bmatrix}
+			1\\
+			-1
+		\end{bmatrix}
+		+ k\begin{bmatrix}
+			4\\
+			4
+		\end{bmatrix}
+	\end{align}\\
+
+	On simplification : 
+	\begin{align}
+		x = \begin{bmatrix}
+			1+k\\
+			-1+k
+		\end{bmatrix}
+	\end{align}\\
+
+	Substituting (7) in (3) we get :
+
+	\begin{align}
+		\lvert \lvert 
+			\begin{bmatrix}
+				k+2.47756\\
+				k-0.20505
+			\end{bmatrix}
+		\rvert \rvert ^2 = (1.89689)^2
+	\end{align}\\
+
+	Which gives us the following quadratic equation :
+	\begin{align}
+		2k^2 + 4.545k + 2.58216 = 0
+	\end{align}\\
+
+	On solving, we find that k has only one value,
+	\begin{align}
+		k = \frac{-4-\sqrt{37}+\sqrt{61}}{2}
+	\end{align}\\
+
+	Substituting (10) back into (7), we get point of contact with AC,
+	\begin{align}
+		{E}_3 = \begin{bmatrix}
+			\frac{-2-\sqrt{37}+\sqrt{61}}{2}\\ \\
+			\frac{-6-\sqrt{37}+\sqrt{61}}{2}
+		\end{bmatrix}
+	\end{align}\\
+
+	\bigskip
+
+	Parametric equation of AB is : 
+	\begin{align}
+		x = A + k(A-B)
+	\end{align}\\
+	\begin{align}
+		x = \begin{bmatrix}
+			1\\
+			-1
+		\end{bmatrix}
+		+ k\begin{bmatrix}
+			5\\
+			-7
+		\end{bmatrix}
+	\end{align}\\
+
+	On simplification :
+	\begin{align}
+		x = \begin{bmatrix}
+			1+5k\\
+			-1-7k
+		\end{bmatrix}
+	\end{align}\\
+
+	Substituting (14) in (3) we get :\\
+	\begin{align}
+		\lvert \lvert 
+			\begin{bmatrix}
+				5k+2.47756\\
+				-7k-0.20505
+			\end{bmatrix}
+		\rvert \rvert ^2 = (1.89689)^2
+	\end{align}\\
+
+	Which gives us the following quadratic equation :
+	\begin{align}
+		74k^2 + 27.6463k + 2.58216 = 0
+	\end{align}\\
+
+	On solving, we find that k has only one value,
+	\begin{align}
+		k = \frac{-37-4\sqrt{37}+\sqrt{2257}}{74}
+	\end{align}\\
+
+	Substituting (17) back into (7), we get point of contact with AB,
+	\begin{align}
+		{F}_3 = \begin{bmatrix}
+			\frac{-111-20\sqrt{37}+5\sqrt{2257}}{74}\\ \\
+			\frac{185+28\sqrt{37}-\sqrt{2257}}{74}
+		\end{bmatrix}
+	\end{align}\\
+	
+	\bigskip
+
+	Diagram is shown on next page.
+
 \end{flushleft}
 
-\begin{flushleft}
-
-	From previous questions we know the coordinates of the incircle are : \\
-	\bigskip
-	I = 
-	\begin {bmatrix}
-		\frac{-53-11\sqrt{37}+7\sqrt{61}+\sqrt{2257}}{12} \\ \\
-		\frac{5-\sqrt{37}+5\sqrt{61}-\sqrt{2257}}{12}
-	\end{bmatrix}
-	\\
-	\bigskip
-	Radius of incircle is :\\
-	\bigskip
-	$r = \frac{185+41\sqrt{37}+-37\sqrt{61}-\sqrt{2257}}{6\sqrt{74}}$
-	\\
-	\bigskip
-	Equation of incircle is : \\
-	\bigskip
-	${\lvert \lvert x-I \rvert \rvert}^2 = {r}^2$ -----(1)\\
-	\bigskip
-
-	points A, B and C are : \\
-	\bigskip
-	$A = \begin{bmatrix}
-		1\\
-		-1
-	\end{bmatrix}, 
-	B = \begin{bmatrix}
-		-4\\
-		6
-	\end{bmatrix}, 
-	C = \begin{bmatrix}
-		-3\\
-		-5
-	\end{bmatrix}$
-	\\
-	\bigskip
-
-	Parametric equation of AC is :\\
-	\bigskip
-	$x = A + k(A-B)$\\
-	\bigskip
-	$x = \begin{bmatrix}
-		1\\
-		-1
-	\end{bmatrix}
-	+ k\begin{bmatrix}
-		4\\
-		4
-	\end{bmatrix}$\\
-	\bigskip
-	On simplification : \\
-	\bigskip
-	$x = \begin{bmatrix}
-		1+k\\
-		-1+k
-	\end{bmatrix}$ -----(2)\\
-
-	\bigskip
-	On substituting Eq(2) in Eq(1) and solving, we find that k has only one solution :\\
-	\bigskip
-	$k = \frac{-4-\sqrt{37}+\sqrt{61}}{2}$\\
-	\bigskip
-	Substituting back into Eq(2), we get point of contact with AC,\\
-	\bigskip
-	${E}_3 = \begin{bmatrix}
-		\frac{-2-\sqrt{37}+\sqrt{61}}{2}\\ \\
-		\frac{-6-\sqrt{37}+\sqrt{61}}{2}
-	\end{bmatrix}$\\
-	\bigskip
-	Parametric equation of AB is : \\
-	\bigskip
-	$x = A + k(A-B)$\\
-	\bigskip
-	$x = \begin{bmatrix}
-		1\\
-		-1
-	\end{bmatrix}
-	+ k\begin{bmatrix}
-		5\\
-		-7
-	\end{bmatrix}$\\
-	\bigskip
-	On simplification :\\
-	\bigskip
-	$x = \begin{bmatrix}
-		1+5k\\
-		-1-7k
-	\end{bmatrix}$\\
-	\bigskip
-
-	Substituting back into Eq(2), we get point of contact with AB,\\
-	\bigskip
-	${F}_3 = \begin{bmatrix}
-		\frac{-111-20\sqrt{37}+5\sqrt{2257}}{74}\\ \\
-		\frac{185+28\sqrt{37}-7\sqrt{2257}}{74}
-	\end{bmatrix}$\\
-	\bigskip
-	Diagram is shown below :\\
-
-\end{flushleft}
+\newpage
 
 \begin{figure}[h]
 	\centering
