@@ -1,0 +1,229 @@
+
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+%    \usepackage{color}                                            %%
+%    \usepackage{array}                                            %%
+%    \usepackage{longtable}                                        %%
+%    \usepackage{calc}                                             %%
+%    \usepackage{multirow}                                         %%
+%    \usepackage{hhline}                                           %%
+%    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+%    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+
+\begin{document}
+
+
+\bibliographystyle{IEEEtran}
+
+
+\vspace{3cm}
+
+\title{
+	Question 1.5.9
+}
+
+\author{
+	EE22BTECH11054 - Umair Parwez
+}	
+
+\maketitle
+\newpage
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{flushleft}
+	Required to find points of contact, $E_{3}$ and $F_{3}$, of incircle with sides AC and AB respectively.
+\end{flushleft}
+
+\begin{flushleft}
+
+	From previous questions we know the coordinates of the incircle are : \\
+	\bigskip
+	I = 
+	\begin {bmatrix}
+		\frac{-53-11\sqrt{37}+7\sqrt{61}+\sqrt{2257}}{12} \\ \\
+		\frac{5-\sqrt{37}+5\sqrt{61}-\sqrt{2257}}{12}
+	\end{bmatrix}
+	\\
+	\bigskip
+	Radius of incircle is :\\
+	\bigskip
+	$r = \frac{185+41\sqrt{37}+-37\sqrt{61}-\sqrt{2257}}{6\sqrt{74}}$
+	\\
+	\bigskip
+	Equation of incircle is : \\
+	\bigskip
+	${\lvert \lvert x-I \rvert \rvert}^2 = {r}^2$ -----(1)\\
+	\bigskip
+
+	points A, B and C are : \\
+	\bigskip
+	$A = \begin{bmatrix}
+		1\\
+		-1
+	\end{bmatrix}, 
+	B = \begin{bmatrix}
+		-4\\
+		6
+	\end{bmatrix}, 
+	C = \begin{bmatrix}
+		-3\\
+		-5
+	\end{bmatrix}$
+	\\
+	\bigskip
+
+	Parametric equation of AC is :\\
+	\bigskip
+	$x = A + k(A-B)$\\
+	\bigskip
+	$x = \begin{bmatrix}
+		1\\
+		-1
+	\end{bmatrix}
+	+ k\begin{bmatrix}
+		4\\
+		4
+	\end{bmatrix}$\\
+	\bigskip
+	On simplification : \\
+	\bigskip
+	$x = \begin{bmatrix}
+		1+k\\
+		-1+k
+	\end{bmatrix}$ -----(2)\\
+
+	\bigskip
+	On substituting Eq(2) in Eq(1) and solving, we find that k has only one solution :\\
+	\bigskip
+	$k = \frac{-4-\sqrt{37}+\sqrt{61}}{2}$\\
+	\bigskip
+	Substituting back into Eq(2), we get point of contact with AC,\\
+	\bigskip
+	${E}_3 = \begin{bmatrix}
+		\frac{-2-\sqrt{37}+\sqrt{61}}{2}\\ \\
+		\frac{-6-\sqrt{37}+\sqrt{61}}{2}
+	\end{bmatrix}$\\
+	\bigskip
+	Parametric equation of AB is : \\
+	\bigskip
+	$x = A + k(A-B)$\\
+	\bigskip
+	$x = \begin{bmatrix}
+		1\\
+		-1
+	\end{bmatrix}
+	+ k\begin{bmatrix}
+		5\\
+		-7
+	\end{bmatrix}$\\
+	\bigskip
+	On simplification :\\
+	\bigskip
+	$x = \begin{bmatrix}
+		1+5k\\
+		-1-7k
+	\end{bmatrix}$\\
+	\bigskip
+
+	Substituting back into Eq(2), we get point of contact with AB,\\
+	\bigskip
+	${F}_3 = \begin{bmatrix}
+		\frac{-111-20\sqrt{37}+5\sqrt{2257}}{74}\\ \\
+		\frac{185+28\sqrt{37}-7\sqrt{2257}}{74}
+	\end{bmatrix}$\\
+	\bigskip
+	Diagram is shown below :\\
+
+\end{flushleft}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\columnwidth]{./Diagram.png}
+	\caption{Points of contact of incircle}
+	\label{Incircle}
+\end{figure}
+
+\end{document}
+
+
