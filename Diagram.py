@@ -65,3 +65,9 @@ plt.grid()
 plt.axis('equal')
 
 plt.savefig('./Diagram.png')
+
+
+
+
+
+
