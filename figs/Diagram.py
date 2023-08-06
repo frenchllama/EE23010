@@ -9,6 +9,8 @@ from line.funcs import *
 from triangle.funcs import *
 from conics.funcs import circ_gen
 
+#function to generate points of contact
+
 def pointsOfContact(I, A, r):
     P = A-I
     d = math.sqrt(P[0]*P[0]+P[1]*P[1])
@@ -26,26 +28,38 @@ def pointsOfContact(I, A, r):
 
     return P1, P2
 
+#vertices of triangle
 
 A=np.array([1, -1])
 B=np.array([-4, 6])
 C=np.array([-3, -5])
 
+#generating lines
+
 x_AB = line_gen(A, B)
 x_BC = line_gen(B, C)
 x_CA = line_gen(C, A)
 
+#generating incentre and finding inradius
+
 [I,r] = icircle(A,B,C)
 x_icirc= circ_gen(I,r)
 
+#generating points of contact
+
 [E3, F3] = pointsOfContact(I, A, r)
 
+#plotting sides
 
 plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
 plt.plot(x_BC[0,:],x_BC[1,:],label='$BC$')
 plt.plot(x_CA[0,:],x_CA[1,:],label='$CA$')
 
+#plotting incircle
+
 plt.plot(x_icirc[0,:],x_icirc[1,:],label='$incircle$')
+
+#labeling points
 
 tri_coords = np.vstack((A,B,C,E3, F3,I)).T
 plt.scatter(tri_coords[0,:], tri_coords[1,:])
