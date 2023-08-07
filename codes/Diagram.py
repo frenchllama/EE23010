@@ -78,7 +78,7 @@ plt.legend(loc='best')
 plt.grid() 
 plt.axis('equal')
 
-plt.savefig('./Diagram.png')
+plt.savefig('./figs/Diagram.png')
 
 
 

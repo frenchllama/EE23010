@@ -116,9 +116,9 @@
 	\bigskip
 	Given triangle ABC with vertices, 
 	\begin{align}
-		A = \myvec{1\\ -1}, B = \myvec{-4\\ 6}, C = \myvec{-3\\ -5}
+		\vec{A} = \myvec{1\\ -1}, \vec{B} = \myvec{-4\\ 6}, \vec{C} = \myvec{-3\\ -5}
 	\end{align}\\
-	find the points of contact, $E_{3}$ and $F_{3}$, of the incircle with sides AC and AB respectively.\\
+	find the points of contact, $\vec{E}_3$ and $\vec{F}_3$, of the incircle with sides AC and AB respectively.\\
 	\bigskip
 \end{flushleft}
 
@@ -126,13 +126,13 @@
 	\textbf{Solution}\\
 	\bigskip
 
-	Required to find points of contact, $\myvec{E_{3}}$ and $\myvec{F_{3}}$, of incircle with sides AC and AB respectively.\\
+	Required to find points of contact, $\vec{E}_3$ and $\vec{F}_3$, of incircle with sides AC and AB respectively.\\
 
 	\bigskip
 
 	From previous questions we know the coordinates of the incircle are : 
 	\begin{align}
-		\myvec{I} = 
+		\vec{I} = 
 		\myvec {
 			\frac{-53-11\sqrt{37}+7\sqrt{61}+\sqrt{2257}}{12} \\ \\
 			\frac{5-\sqrt{37}+5\sqrt{61}-\sqrt{2257}}{12}
@@ -146,20 +146,20 @@
 
 	Equation of incircle is : 
 	\begin{align}
-		{\norm{ x-I }}^2 = {r}^2 
+		{\norm{ \vec{x}-\vec{I} }}^2 = {r}^2 
 	\end{align}\\
 
-	points A, B and C are : 
+	points $\vec{A}$, $\vec{B}$ and $\vec{C}$ are : 
 	\begin{align}
-		\myvec{A} = \myvec{
+		\vec{A} = \myvec{
 			1\\
 			-1
 		}, 
-		\myvec{B} = \myvec{
+		\vec{B} = \myvec{
 			-4\\
 			6
 		}, 
-		\myvec{C} = \myvec{
+		\vec{C} = \myvec{
 			-3\\
 			-5
 		}
@@ -167,34 +167,34 @@
 
 	Parametric equation of AC is :
 	\begin{align}
-		x = A + k(A-C)
+		\vec{x} = \vec{A} + k(\vec{A}-\vec{C})
 	\end{align}\\
 	
 	Substituting (5) in (3) : 
 	\begin{align}
-		{\norm{ A+k(A-C)-I }}^2 = {r}^2 
+		{\norm{ \vec{A}+k(\vec{A}-\vec{C})-\vec{I} }}^2 = {r}^2 
 	\end{align}
 	\begin{align}
-		(A+k(A-C)-I)\cdot(A+k(A-C)-I) = {r}^2
+		(\vec{A}+k(\vec{A}-\vec{C})-\vec{I})\cdot(\vec{A}+k(\vec{A}-\vec{C})-\vec{I}) = {r}^2
 	\end{align}
 	\begin{align}
-		k^2 \norm{A-C}^2 + 2k(\norm{A}^2 - {A}^T C - {I}^T A + {I}^T C) + \norm{A-I}^2 = {r}^2
+		k^2 \norm{\vec{A}-\vec{C}}^2 + 2k(\norm{\vec{A}}^2 - {\vec{A}}^T \vec{C} - {\vec{I}}^T \vec{A} + {\vec{I}}^T \vec{C}) + \norm{\vec{A}-\vec{I}}^2 = {r}^2
 	\end{align}
 
 	Since AC is tangent to the incircle, the discriminant of the obtained quadratic equation is zero and the value of k is given as :
 
 	\begin{align}
-		k = -\frac{(\norm{A}^2 - {A}^T C - {I}^T A + {I}^T C)}{\norm{A-C}^2}
+		k = -\frac{(\norm{\vec{A}}^2 - {\vec{A}}^T \vec{C} - {\vec{I}}^T \vec{A} + {\vec{I}}^T \vec{C})}{\norm{\vec{A}-\vec{C}}^2}
 	\end{align}\\
 
-	Upon substituting the values of A, C and I into (10) we get,  
+	Upon substituting the values of $\vec{A}$, $\vec{C}$ and $\vec{I}$ into (10) we get,  
 	\begin{align}
 		k = \frac{-4-\sqrt{37}+\sqrt{61}}{2}
 	\end{align}\\
 
 	Substituting (11) back into (5), we get point of contact with AC,
 	\begin{align}
-		\myvec{{E}_3} = \myvec{
+		\vec{E}_3 = \myvec{
 			\frac{-2-\sqrt{37}+\sqrt{61}}{2}\\ \\
 			\frac{-6-\sqrt{37}+\sqrt{61}}{2}
 		}
@@ -205,10 +205,10 @@
 	\bigskip
 	Parametric equation of AB is : 
 	\begin{align}
-		x = A + k(A-B)
+		x = \vec{A} + k(\vec{A}-\vec{B})
 	\end{align}\\
 
-	We can get the value of k by replacing C with B in Eq(10). Upon substituting the values, we get, 
+	We can get the value of k by replacing $\vec{C}$ with $\vec{B}$ in Eq(10). Upon substituting the values, we get, 
 
 	\begin{align}
 		k = \frac{-37-4\sqrt{37}+\sqrt{2257}}{74}
@@ -216,7 +216,7 @@
 
 	Substituting (14) back into (13), we get point of contact with AB,
 	\begin{align}
-		\myvec{{F}_3} = \myvec{
+		\vec{F}_3 = \myvec{
 			\frac{-111-20\sqrt{37}+5\sqrt{2257}}{74}\\ \\
 			\frac{185+28\sqrt{37}-\sqrt{2257}}{74}
 		}
