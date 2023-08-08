@@ -106,138 +106,137 @@
 
 \maketitle
 \newpage
-\bigskip
+
 
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 
-\begin{flushleft}
-	\textbf{Question 1.5.9}\\
-	\bigskip
-	Given triangle ABC with vertices, 
-	\begin{align}
-		\vec{A} = \myvec{1\\ -1}, \vec{B} = \myvec{-4\\ 6}, \vec{C} = \myvec{-3\\ -5}
-	\end{align}\\
-	find the points of contact, $\vec{E}_3$ and $\vec{F}_3$, of the incircle with sides AC and AB respectively.\\
-	\bigskip
-\end{flushleft}
 
-\begin{flushleft}
-	\textbf{Solution}\\
-	\bigskip
+\textbf{Question 1.5.9}
+	
+Given triangle $ABC$ with vertices, 
+\begin{align}
+	\vec{A} = \myvec{1\\ -1}, \vec{B} = \myvec{-4\\ 6}, \vec{C} = \myvec{-3\\ -5}
+\end{align}
+Find the points of contact, $\vec{E}_3$ and $\vec{F}_3$, of the incircle with sides $AC$ and $AB$ respectively.
+	
 
-	Required to find points of contact, $\vec{E}_3$ and $\vec{F}_3$, of incircle with sides AC and AB respectively.\\
+\textbf{Solution}
+	
 
-	\bigskip
+Required to find points of contact, $\vec{E}_3$ and $\vec{F}_3$, of incircle with sides $AC$ and $AB$ respectively.\\
 
-	From previous questions we know the coordinates of the incircle are : 
-	\begin{align}
-		\vec{I} = 
-		\myvec {
-			\frac{-53-11\sqrt{37}+7\sqrt{61}+\sqrt{2257}}{12} \\ \\
-			\frac{5-\sqrt{37}+5\sqrt{61}-\sqrt{2257}}{12}
-		}
-	\end{align}\\
+	
 
-	Radius of incircle is :
+From previous questions we know the coordinates of the incircle are : 
+\begin{align}
+	\vec{I} = 
+	\myvec {
+		\frac{-53-11\sqrt{37}+7\sqrt{61}+\sqrt{2257}}{12} \\ 
+		\frac{5-\sqrt{37}+5\sqrt{61}-\sqrt{2257}}{12}
+	}
+\end{align}
+
+Radius of incircle is :
     \begin{align}
 		r = \frac{185+41\sqrt{37}-37\sqrt{61}-\sqrt{2257}}{6\sqrt{74}}
-    \end{align}\\
-
-	Equation of incircle is : 
-	\begin{align}
-		{\norm{ \vec{x}-\vec{I} }}^2 = {r}^2 
-	\end{align}\\
-
-	points $\vec{A}$, $\vec{B}$ and $\vec{C}$ are : 
-	\begin{align}
-		\vec{A} = \myvec{
-			1\\
-			-1
-		}, 
-		\vec{B} = \myvec{
-			-4\\
-			6
-		}, 
-		\vec{C} = \myvec{
-			-3\\
-			-5
-		}
-	\end{align}\\
-
-	Parametric equation of AC is :
-	\begin{align}
-		\vec{x} = \vec{A} + k\vec{m}
-	\end{align}\\
-
-	where,
-	\begin{align}
-		\vec{m} = \vec{A} - \vec{C}
 	\end{align}
+
+Equation of incircle is : 
+\begin{align}
+	{\norm{ \vec{x}-\vec{I} }}^2 = {r}^2 \label{eq:circle}
+\end{align}
+
+points $\vec{A}$, $\vec{B}$ and $\vec{C}$ are : 
+\begin{align}
+	\vec{A} = \myvec{
+		1\\
+		-1
+	}, 
+	\vec{B} = \myvec{
+		-4\\
+		6
+	}, 
+	\vec{C} = \myvec{
+		-3\\
+		-5
+	}
+\end{align}
+
+Parametric equation of $AC$ is :
+\begin{align}
+	\vec{x} = \vec{A} + k\vec{m} \label{eq:AC}
+\end{align}
+
+where,
+\begin{align}
+	\vec{m} = \vec{A} - \vec{C}
+\end{align}
 	
-	Substituting (5) in (3) : 
-	\begin{align}
-		{\norm{ \vec{A}+k\vec{m}-\vec{I} }}^2 = {r}^2 
-	\end{align}
-	\begin{align}
-		(k\vec{m} + (\vec{A} - \vec{I}))\cdot(k\vec{m} + (\vec{A} - \vec{I})) = {r}^2
-	\end{align}
-	\begin{align}
-		k^2 \norm{\vec{m}}^2 + 2k\vec{m}^T (\vec{A}-\vec{I}) + \norm{\vec{A}-\vec{I}}^2 = {r}^2
-	\end{align}
+Substituting \eqref{eq:AC} in \eqref{eq:circle} : 
+\begin{align}
+	{\norm{ \vec{A}+k\vec{m}-\vec{I} }}^2 &= {r}^2 \\
+	(k\vec{m} + (\vec{A} - \vec{I}))\cdot(k\vec{m} + (\vec{A} - \vec{I})) &= {r}^2 \\
+	k^2 \norm{\vec{m}}^2 + 2k\vec{m}^{\top} (\vec{A}-\vec{I}) + \norm{\vec{A}-\vec{I}}^2 &= {r}^2
+\end{align}
 
-	Since AC is tangent to the incircle, the discriminant of the obtained quadratic equation is zero and the value of k is given as :
+Since $AC$ is tangent to the incircle, the discriminant of the obtained quadratic equation is zero and the value of $k$ is given as :
 
-	\begin{align}
-		k = -\frac{\vec{m}^T(\vec{A} - \vec{C})}{\norm{\vec{m}}^2}
-	\end{align}\\
+\begin{align}
+	k = -\frac{\vec{m}^{\top}(\vec{A} - \vec{I})}{\norm{\vec{m}}^2} \label{eq:k}
+\end{align}
 
-	Upon substituting the values of $\vec{A}$, $\vec{C}$, $\vec{I}$ and $\vec{m}$ into (11) we get,  
-	\begin{align}
-		k = \frac{-4-\sqrt{37}+\sqrt{61}}{2}
-	\end{align}\\
-
-	Substituting (12) back into (5), we get point of contact with AC,
-	\begin{align}
-		\vec{E}_3 = \myvec{
-			\frac{-2-\sqrt{37}+\sqrt{61}}{2}\\ \\
-			\frac{-6-\sqrt{37}+\sqrt{61}}{2}
-		}
-	\end{align}\\
-
-	\bigskip
-	Now let us find the other point of contact, with AB.\\
-	\bigskip
-	Parametric equation of AB is : 
-	\begin{align}
-		x = \vec{A} + k\vec{m}
-	\end{align}\\
-
-	where,
-
-	\begin{align}
-		\vec{m} = \vec{A} - \vec{B}
-	\end{align}
-
-	We can get the value of k by replacing $\vec{C}$ with $\vec{B}$ in Eq(11). Upon substituting the values, we get, 
-
-	\begin{align}
-		k = \frac{-37-4\sqrt{37}+\sqrt{2257}}{74}
-	\end{align}\\
-
-	Substituting (16) back into (14), we get point of contact with AB,
-	\begin{align}
-		\vec{F}_3 = \myvec{
-			\frac{-111-20\sqrt{37}+5\sqrt{2257}}{74}\\ \\
-			\frac{185+28\sqrt{37}-\sqrt{2257}}{74}
-		}
-	\end{align}\\
+We can use \eqref{eq:k} and find the points of contact with $AC$ and $AB$ by substituting $k$ back into their parametric equations,  
 	
-	\bigskip
+Parametric equation of $AB$ is : 
+\begin{align}
+	x = \vec{A} + k\vec{m} \label{eq:AB}
+\end{align}
+where,
+\begin{align}
+	\vec{m} = \vec{A} - \vec{B}
+\end{align}
 
-	Diagram is shown on next page.
+\begin{enumerate}
+	\item For finding $\vec{E}_3$, substitute $A$, $C$ and $I$ into \eqref{eq:k},
+		\begin{align}
+			k &= -\frac{\vec{m}^{\top}(\vec{A} - \vec{I})}{\norm{\vec{m}}^2} \\
+			k &= -\frac{(\vec{A}-\vec{C})^{\top}(\vec{A} - \vec{I})}{\norm{\vec{A}-\vec{C}}^2}
+		\end{align}
+		Substituting the values, we get,
+		\begin{align}
+			k = \frac{-4-\sqrt{37}+\sqrt{61}}{2} \label{k:AC} 
+		\end{align}
+		Substituting \eqref{k:AC} into \eqref{eq:AC}, we get the value of $\vec{E}_3$,
+		\begin{align}
+			\vec{E}_3 = \myvec{
+				\frac{-2-\sqrt{37}+\sqrt{61}}{2}\\ 
+				\frac{-6-\sqrt{37}+\sqrt{61}}{2}
+			}
+		\end{align}
+	\item For finding $\vec{F}_3$, substitute $A$, $B$ and $I$ into \eqref{eq:k},
+		\begin{align}
+			k &= -\frac{\vec{m}^{\top}(\vec{A} - \vec{I})}{\norm{\vec{m}}^2} \\
+			k &= -\frac{(\vec{A}-\vec{B})^{\top}(\vec{A} - \vec{I})}{\norm{\vec{A}-\vec{B}}^2}
+		\end{align}
+		Substituting the values, we get,
+		\begin{align}
+			k = \frac{-37-4\sqrt{37}+\sqrt{2257}}{74} \label{k:AB}
+		\end{align}
+		Substituting \eqref{k:AB} into \eqref{eq:AB}, we get the value of $\vec{F}_3$,
+		\begin{align}
+			\vec{F}_3 = \myvec{
+				\frac{-111-20\sqrt{37}+5\sqrt{2257}}{74}\\ 
+				\frac{185+28\sqrt{37}-7\sqrt{2257}}{74}
+			}
+		\end{align}
+\end{enumerate}
+	
+	
 
-\end{flushleft}
+Diagram is shown on next page.
+
+
 
 \newpage
 

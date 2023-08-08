@@ -11,22 +11,14 @@ from conics.funcs import circ_gen
 
 #function to generate points of contact
 
-def pointsOfContact(I, A, r):
-    P = A-I
-    d = math.sqrt(P[0]*P[0]+P[1]*P[1])
-    theta = math.acos(r/d)
-    phi = math.atan(P[1]/P[0])
-    theta1 = phi + theta
-    theta2 = phi - theta
-    x1 = r*(math.cos(theta1))
-    x2 = r*(math.cos(theta2))
-    y1 = r*(math.sin(theta1))
-    y2 = r*(math.sin(theta2))
-    
-    P1 = I + np.array([x1, y1])
-    P2 = I + np.array([x2, y2])
-
-    return P1, P2
+def pointOfContact(I, r, A, B):
+    m = A-B
+    normSquarem = m[0]*m[0]+m[1]*m[1]
+    n = A-I
+    numerator = m[0]*n[0] + m[1]*n[1]
+    k = -(numerator/normSquarem)
+    contactPoint = A + k*m
+    return contactPoint
 
 #vertices of triangle
 
@@ -47,7 +39,8 @@ x_icirc= circ_gen(I,r)
 
 #generating points of contact
 
-[E3, F3] = pointsOfContact(I, A, r)
+E3 = pointOfContact(I, r, A, C)
+F3 = pointOfContact(I, r, A, B)
 
 #plotting sides
 
@@ -79,9 +72,3 @@ plt.grid()
 plt.axis('equal')
 
 plt.savefig('./figs/Diagram.png')
-
-
-
-
-
-
