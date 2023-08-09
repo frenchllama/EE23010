@@ -13,12 +13,16 @@ from conics.funcs import circ_gen
 
 def pointOfContact(I, r, A, B):
     m = A-B
-    normSquarem = m[0]*m[0]+m[1]*m[1]
     n = A-I
-    numerator = m[0]*n[0] + m[1]*n[1]
-    k = -(numerator/normSquarem)
+    k = -(np.matmul(m, n)/np.matmul(m, m))
     contactPoint = A + k*m
     return contactPoint
+
+def discriminant(I, r, A, B):
+    m = A-B
+    n = A-I
+    discr = 4*(np.matmul(m, n)**2) - 4*np.matmul(m, m)*(np.matmul(n, n) - r**2)
+    return discr
 
 #vertices of triangle
 
@@ -39,6 +43,11 @@ x_icirc= circ_gen(I,r)
 
 #generating points of contact
 
+d1 = discriminant(I, r, A, C)
+d2 = discriminant(I, r, A, C)
+
+print("the discriminants of the quadratics are, ",d1, d2, ", which are both approx 0")
+
 E3 = pointOfContact(I, r, A, C)
 F3 = pointOfContact(I, r, A, B)
 
@@ -54,7 +63,7 @@ plt.plot(x_icirc[0,:],x_icirc[1,:],label='$incircle$')
 
 #labeling points
 
-tri_coords = np.vstack((A,B,C,E3, F3,I)).T
+tri_coords = np.block([[A],[B],[C],[E3],[F3],[I]]).T
 plt.scatter(tri_coords[0,:], tri_coords[1,:])
 vert_labels = ['A','B','C','E3', 'F3','I']
 for i, txt in enumerate(vert_labels):

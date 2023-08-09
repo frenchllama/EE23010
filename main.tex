@@ -113,21 +113,16 @@
 
 
 \textbf{Question 1.5.9}
-	
+
 Given triangle $ABC$ with vertices, 
 \begin{align}
 	\vec{A} = \myvec{1\\ -1}, \vec{B} = \myvec{-4\\ 6}, \vec{C} = \myvec{-3\\ -5}
 \end{align}
 Find the points of contact, $\vec{E}_3$ and $\vec{F}_3$, of the incircle with sides $AC$ and $AB$ respectively.
-	
 
 \textbf{Solution}
-	
 
-Required to find points of contact, $\vec{E}_3$ and $\vec{F}_3$, of incircle with sides $AC$ and $AB$ respectively.\\
-
-	
-
+Required to find points of contact, $\vec{E}_3$ and $\vec{F}_3$, of incircle with sides $AC$ and $AB$ respectively.
 From previous questions we know the coordinates of the incircle are : 
 \begin{align}
 	\vec{I} = 
@@ -136,17 +131,14 @@ From previous questions we know the coordinates of the incircle are :
 		\frac{5-\sqrt{37}+5\sqrt{61}-\sqrt{2257}}{12}
 	}
 \end{align}
-
 Radius of incircle is :
     \begin{align}
 		r = \frac{185+41\sqrt{37}-37\sqrt{61}-\sqrt{2257}}{6\sqrt{74}}
 	\end{align}
-
 Equation of incircle is : 
 \begin{align}
 	{\norm{ \vec{x}-\vec{I} }}^2 = {r}^2 \label{eq:circle}
 \end{align}
-
 points $\vec{A}$, $\vec{B}$ and $\vec{C}$ are : 
 \begin{align}
 	\vec{A} = \myvec{
@@ -162,32 +154,38 @@ points $\vec{A}$, $\vec{B}$ and $\vec{C}$ are :
 		-5
 	}
 \end{align}
-
 Parametric equation of $AC$ is :
 \begin{align}
 	\vec{x} = \vec{A} + k\vec{m} \label{eq:AC}
 \end{align}
-
 where,
 \begin{align}
 	\vec{m} = \vec{A} - \vec{C}
 \end{align}
-	
 Substituting \eqref{eq:AC} in \eqref{eq:circle} : 
 \begin{align}
 	{\norm{ \vec{A}+k\vec{m}-\vec{I} }}^2 &= {r}^2 \\
-	(k\vec{m} + (\vec{A} - \vec{I}))\cdot(k\vec{m} + (\vec{A} - \vec{I})) &= {r}^2 \\
-	k^2 \norm{\vec{m}}^2 + 2k\vec{m}^{\top} (\vec{A}-\vec{I}) + \norm{\vec{A}-\vec{I}}^2 &= {r}^2
+	\implies (k\vec{m} + (\vec{A} - \vec{I}))(k\vec{m} + (\vec{A} - \vec{I})) &= {r}^2 \\
+	\implies k^2 \norm{\vec{m}}^2 + 2k\vec{m}^{\top} (\vec{A}-\vec{I}) + \norm{\vec{A}-\vec{I}}^2 &= {r}^2
 \end{align}
-
-Since $AC$ is tangent to the incircle, the discriminant of the obtained quadratic equation is zero and the value of $k$ is given as :
-
+The discriminant of the quadratic is,
+\begin{align}
+	\Delta = 4(\vec{m}^{\top}(\vec{A}-\vec{I}))^2 - 4\norm{\vec{m}}^2(\norm{\vec{A}-\vec{I}}^2 - r^2) \label{eq:Delta}
+\end{align} 
+Upon substituting values into \eqref{eq:Delta} we find that,
+\begin{align}
+	\Delta = 0
+\end{align}
+Therefore $AC$ is tangent to the incircle and the value of $k$ is given as :
 \begin{align}
 	k = -\frac{\vec{m}^{\top}(\vec{A} - \vec{I})}{\norm{\vec{m}}^2} \label{eq:k}
 \end{align}
+Similarly for $AB$, we can replace $\vec{C}$ with $\vec{B}$ in \eqref{eq:Delta} and upon substituting values we get,
+\begin{align}
+	\Delta = 0
+\end{align}
+Therefore we can use \eqref{eq:k} and find the points of contact with $AC$ and $AB$ by substituting $k$ back into their parametric equations.
 
-We can use \eqref{eq:k} and find the points of contact with $AC$ and $AB$ by substituting $k$ back into their parametric equations,  
-	
 Parametric equation of $AB$ is : 
 \begin{align}
 	x = \vec{A} + k\vec{m} \label{eq:AB}
@@ -196,12 +194,11 @@ where,
 \begin{align}
 	\vec{m} = \vec{A} - \vec{B}
 \end{align}
-
 \begin{enumerate}
 	\item For finding $\vec{E}_3$, substitute $A$, $C$ and $I$ into \eqref{eq:k},
 		\begin{align}
 			k &= -\frac{\vec{m}^{\top}(\vec{A} - \vec{I})}{\norm{\vec{m}}^2} \\
-			k &= -\frac{(\vec{A}-\vec{C})^{\top}(\vec{A} - \vec{I})}{\norm{\vec{A}-\vec{C}}^2}
+			&= -\frac{(\vec{A}-\vec{C})^{\top}(\vec{A} - \vec{I})}{\norm{\vec{A}-\vec{C}}^2}
 		\end{align}
 		Substituting the values, we get,
 		\begin{align}
@@ -217,7 +214,7 @@ where,
 	\item For finding $\vec{F}_3$, substitute $A$, $B$ and $I$ into \eqref{eq:k},
 		\begin{align}
 			k &= -\frac{\vec{m}^{\top}(\vec{A} - \vec{I})}{\norm{\vec{m}}^2} \\
-			k &= -\frac{(\vec{A}-\vec{B})^{\top}(\vec{A} - \vec{I})}{\norm{\vec{A}-\vec{B}}^2}
+			&= -\frac{(\vec{A}-\vec{B})^{\top}(\vec{A} - \vec{I})}{\norm{\vec{A}-\vec{B}}^2}
 		\end{align}
 		Substituting the values, we get,
 		\begin{align}
@@ -231,22 +228,13 @@ where,
 			}
 		\end{align}
 \end{enumerate}
-	
-	
-
-Diagram is shown on next page.
-
-
-
-\newpage
-
+Diagram is shown below,
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{./figs/Diagram.png}
 	\caption{Points of contact of incircle}
 	\label{Incircle}
 \end{figure}
-
 \end{document}
 
 
