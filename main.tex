@@ -112,7 +112,7 @@
 \renewcommand{\thetable}{\theenumi}
 
 
-\textbf{Question 1.5.9}
+\textbf{Question 1.5.9:}
 
 Given triangle $ABC$ with vertices, 
 \begin{align}
@@ -120,20 +120,22 @@ Given triangle $ABC$ with vertices,
 \end{align}
 Find the points of contact, $\vec{E}_3$ and $\vec{F}_3$, of the incircle with sides $AC$ and $AB$ respectively.
 
-\textbf{Solution}
+\textbf{Solution:}
 
 Required to find points of contact, $\vec{E}_3$ and $\vec{F}_3$, of incircle with sides $AC$ and $AB$ respectively.
 From previous questions we know the coordinates of the incircle are : 
 \begin{align}
-	\vec{I} = 
+	\vec{I} &= 
 	\myvec {
 		\frac{-53-11\sqrt{37}+7\sqrt{61}+\sqrt{2257}}{12} \\ 
 		\frac{5-\sqrt{37}+5\sqrt{61}-\sqrt{2257}}{12}
-	}
+	} \\
+	&= \myvec{-1.47756 \\ -0.79495}
 \end{align}
 Radius of incircle is :
     \begin{align}
-		r = \frac{185+41\sqrt{37}-37\sqrt{61}-\sqrt{2257}}{6\sqrt{74}}
+		r &= \frac{185+41\sqrt{37}-37\sqrt{61}-\sqrt{2257}}{6\sqrt{74}} \\
+		&= 1.89689
 	\end{align}
 Equation of incircle is : 
 \begin{align}
@@ -154,48 +156,46 @@ points $\vec{A}$, $\vec{B}$ and $\vec{C}$ are :
 		-5
 	}
 \end{align}
-Parametric equation of $AC$ is :
+Parametric equation of any line is of the form :
 \begin{align}
-	\vec{x} = \vec{A} + k\vec{m} \label{eq:AC}
+	\vec{x} = \vec{A} + k\vec{m} \label{eq:param}
 \end{align}
-where,
-\begin{align}
-	\vec{m} = \vec{A} - \vec{C}
-\end{align}
-Substituting \eqref{eq:AC} in \eqref{eq:circle} : 
+We can substitute \eqref{eq:param} in \eqref{eq:circle}, and we get : 
 \begin{align}
 	{\norm{ \vec{A}+k\vec{m}-\vec{I} }}^2 &= {r}^2 \\
 	\implies (k\vec{m} + (\vec{A} - \vec{I}))(k\vec{m} + (\vec{A} - \vec{I})) &= {r}^2 \\
-	\implies k^2 \norm{\vec{m}}^2 + 2k\vec{m}^{\top} (\vec{A}-\vec{I}) + \norm{\vec{A}-\vec{I}}^2 &= {r}^2
+	\implies k^2 \norm{\vec{m}}^2 + 2k\vec{m}^{\top} (\vec{A}-\vec{I}) + \norm{\vec{A}-\vec{I}}^2 &= {r}^2 
 \end{align}
-The discriminant of the quadratic is,
+The discriminant of the above quadratic is,
 \begin{align}
 	\Delta = 4(\vec{m}^{\top}(\vec{A}-\vec{I}))^2 - 4\norm{\vec{m}}^2(\norm{\vec{A}-\vec{I}}^2 - r^2) \label{eq:Delta}
 \end{align} 
-Upon substituting values into \eqref{eq:Delta} we find that,
+If,
 \begin{align}
 	\Delta = 0
 \end{align}
-Therefore $AC$ is tangent to the incircle and the value of $k$ is given as :
+Then the line given by \eqref{eq:param} is tangent to the incircle and the value of $k$ will be given by :
 \begin{align}
 	k = -\frac{\vec{m}^{\top}(\vec{A} - \vec{I})}{\norm{\vec{m}}^2} \label{eq:k}
 \end{align}
-Similarly for $AB$, we can replace $\vec{C}$ with $\vec{B}$ in \eqref{eq:Delta} and upon substituting values we get,
-\begin{align}
-	\Delta = 0
-\end{align}
-Therefore we can use \eqref{eq:k} and find the points of contact with $AC$ and $AB$ by substituting $k$ back into their parametric equations.
-
-Parametric equation of $AB$ is : 
-\begin{align}
-	x = \vec{A} + k\vec{m} \label{eq:AB}
-\end{align}
-where,
-\begin{align}
-	\vec{m} = \vec{A} - \vec{B}
-\end{align}
+Upon substituting $k$ back into \eqref{eq:param}, we will obtain the point of contact of the line with the incircle.
 \begin{enumerate}
-	\item For finding $\vec{E}_3$, substitute $A$, $C$ and $I$ into \eqref{eq:k},
+	\item Finding $\vec{E}_3$ :\\
+		Parametric equation of $AC$ is,
+		\begin{align}
+			\vec{x} = \vec{A} + k\vec{m} \label{eq:AC}
+		\end{align}
+		where,
+		\begin{align}
+			\vec{m} = \vec{A} - \vec{C}
+		\end{align}	
+		First we confirm value of $\Delta$ for $AC$,
+		\begin{align}
+			\Delta &= 4(\vec{m}^{\top}(\vec{A}-\vec{I}))^2 - 4\norm{\vec{m}}^2(\norm{\vec{A}-\vec{I}}^2 - r^2)\\	
+			&= 4(9.09004)^2 - 4(32)(6.18035-3.59819) \\
+			&= 0
+		\end{align}
+		Therefore, $AC$ is tangent to the incircle, and value of $k$ is given by, 
 		\begin{align}
 			k &= -\frac{\vec{m}^{\top}(\vec{A} - \vec{I})}{\norm{\vec{m}}^2} \\
 			&= -\frac{(\vec{A}-\vec{C})^{\top}(\vec{A} - \vec{I})}{\norm{\vec{A}-\vec{C}}^2}
@@ -211,14 +211,29 @@ where,
 				\frac{-6-\sqrt{37}+\sqrt{61}}{2}
 			}
 		\end{align}
-	\item For finding $\vec{F}_3$, substitute $A$, $B$ and $I$ into \eqref{eq:k},
+	\item Finding $\vec{F}_3$ :\\
+		Parametric equation of $AB$ is,
+		\begin{align}
+			\vec{x} = \vec{A} + k\vec{m} \label{eq:AB}
+		\end{align}
+		where,
+		\begin{align}
+			\vec{m} = \vec{A} - \vec{B}
+		\end{align}	
+		First we confirm value of $\Delta$ for $AB$,
+		\begin{align}
+			\Delta &= 4(\vec{m}^{\top}(\vec{A}-\vec{I}))^2 - 4\norm{\vec{m}}^2(\norm{\vec{A}-\vec{I}}^2 - r^2)\\	
+			&= 4(13.82315)^2 - 4(74)(6.18035-3.59819) \\
+			&= 0
+		\end{align}
+		Therefore, $AB$ is tangent to the incircle, and value of $k$ is given by, 
 		\begin{align}
 			k &= -\frac{\vec{m}^{\top}(\vec{A} - \vec{I})}{\norm{\vec{m}}^2} \\
 			&= -\frac{(\vec{A}-\vec{B})^{\top}(\vec{A} - \vec{I})}{\norm{\vec{A}-\vec{B}}^2}
 		\end{align}
 		Substituting the values, we get,
 		\begin{align}
-			k = \frac{-37-4\sqrt{37}+\sqrt{2257}}{74} \label{k:AB}
+			k = \frac{-37-4\sqrt{37}+\sqrt{2257}}{74} \label{k:AB} 
 		\end{align}
 		Substituting \eqref{k:AB} into \eqref{eq:AB}, we get the value of $\vec{F}_3$,
 		\begin{align}

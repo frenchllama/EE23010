@@ -14,14 +14,14 @@ from conics.funcs import circ_gen
 def pointOfContact(I, r, A, B):
     m = A-B
     n = A-I
-    k = -(np.matmul(m, n)/np.matmul(m, m))
+    k = -((m@n)/(m@m))
     contactPoint = A + k*m
     return contactPoint
 
 def discriminant(I, r, A, B):
     m = A-B
     n = A-I
-    discr = 4*(np.matmul(m, n)**2) - 4*np.matmul(m, m)*(np.matmul(n, n) - r**2)
+    discr = 4*((m@n)**2) - 4*(m@m)*((n@n) - r**2)
     return discr
 
 #vertices of triangle
